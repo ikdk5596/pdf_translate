@@ -16,9 +16,11 @@ def main(args):
   with fitz.open(pdf_path) as doc:
     text = ""
     for page in doc:
-      text += page.getText().replace("\n", "").replace("\\", "")
+      text += page.getText().replace("\n", "").replace("\\", "").replace(".", ".\n")
       pix.append(page.get_pixmap())
       # text += page.getText()
+  
+  
   
   print(text)
   print(pix)

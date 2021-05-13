@@ -21,4 +21,4 @@ def translate(pdf_path):
     origin.append(translation.origin)
     result.append(translation.text)
     
-  return orgin, result
+  return origin, result

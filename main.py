@@ -1,7 +1,13 @@
 import argparse
+from extract_pdf_info import extract_information
 
 def main(args):
-  print(args.path)
+  pdf_path = args.path
+  
+  txt, information = extract_information(pdf_path)
+  print(txt)
+  print()
+  print(information)
 
 
 if __name__ == '__main__':

@@ -23,7 +23,7 @@ def main(args):
   
   
   print(text)
-  print(pix)
+  # print(pix)
   
 
 if __name__ == '__main__':

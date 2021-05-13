@@ -24,7 +24,8 @@ def main(args):
       # text += page.getText()
       
   lines = text.splitlines()
-  print(translator.translate(lines, src='en', dest='ko'))
+  print(type(lines))
+  # print(translator.translate(lines, src='en', dest='ko'))
   # result.append(translator.translate(line, src='en', dest='ko'))
   
   # print(result)

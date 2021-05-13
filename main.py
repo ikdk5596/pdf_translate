@@ -24,19 +24,11 @@ def main(args):
       pix.append(page.get_pixmap())
       
   lines = text.splitlines()
-  
-  translations = translator.translate(lines, dest='ja')
-  for translation in translations:
-    en_origin = translation.origin
-    ja_text.append(translation.text)
-  
-  translations = translator.translate(ja_text, dest='ko')
+
+  translations = translator.translate(lines, dest='ko')
   for translation in translations:
     print(en_origin, ' -> ', translation.text)
-    
-  # print(pix)
 
-  
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()

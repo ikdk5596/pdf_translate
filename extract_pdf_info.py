@@ -23,8 +23,3 @@ def extract_information(pdf_path):
   """
     
   return txt, information
-
-if __name__ == '__main__':
-  path = 'sample.pdf'
-  txt, information = extract_information(path)
-  print(txt)

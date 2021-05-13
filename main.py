@@ -17,7 +17,7 @@ def main(args):
     text = ""
     for page in doc:
       text = page.getText().replace("\n", "").replace("\\", "")
-      pix.append() = page.get_pixmap()
+      pix.append(page.get_pixmap())
       # text += page.getText()
   
   print(text)

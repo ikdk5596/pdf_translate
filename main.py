@@ -23,9 +23,9 @@ def main(args):
       pix.append(page.get_pixmap())
       # text += page.getText()
       
-  # lines = text.splitlines()
+  lines = text.splitlines()
   
-  translations = translator.translate(['The quick brown fox', 'jumps over', 'the lazy dog'], dest='ko')
+  translations = translator.translate(lines, dest='ko')
   for translation in translations:
     print(translation.origin, ' -> ', translation.text)
 

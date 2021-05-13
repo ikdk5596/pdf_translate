@@ -13,6 +13,7 @@ from googletrans import Translator
 def main(args):
   pdf_path = args.path
   translator = Translator()
+  result = []
   pix = []
   
   with fitz.open(pdf_path) as doc:
@@ -23,7 +24,12 @@ def main(args):
       # text += page.getText()
       
   lines = text.splitlines()
-  print(lines)
+  # print(lines)
+  for line in len(lines):
+    result.append(translator.translate(lines[line], src='en', dest='ko'))
+  
+  print(result)
+                  
   # print(type(text))
   # print(text)
   # print(pix)

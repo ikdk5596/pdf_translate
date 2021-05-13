@@ -2,15 +2,17 @@
 # Author : sanghong kim
 # Organization : Repeblic of Korean Army
 # Reference : https://realpython.com/pdf-python/
+# 이후 Regular expression을 사용하여 replace 대체
 
 import argparse
 from PyPDF2 import PdfFileReader
 import fitz
-from extract_pdf_info import extract_information
+from googletrans import Translator
 
 
 def main(args):
   pdf_path = args.path
+  translator = Translator()
   pix = []
   
   with fitz.open(pdf_path) as doc:
@@ -20,9 +22,8 @@ def main(args):
       pix.append(page.get_pixmap())
       # text += page.getText()
   
-  
-  
-  print(text)
+  print(type(text))
+  # print(text)
   # print(pix)
   
 

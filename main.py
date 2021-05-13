@@ -17,7 +17,7 @@ def main(args):
     number_of_pages = pdf.getNumPages()
     page = pdf.getPage(0)
     page_content = page.extractText()
-    text = page_content.encode('utf-8')
+    text = page_content # .encode('utf-8')
   
   print(text)
   

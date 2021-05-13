@@ -21,24 +21,16 @@ def main(args):
     for page in doc:
       text += page.getText().replace("\n", "").replace("\\", "").replace(". ", ".\n")
       pix.append(page.get_pixmap())
-      # text += page.getText()
       
   lines = text.splitlines()
   
-  translations = translator.translate(lines, dest='ko')
+  translations = translator.translate(lines, dest='jp')
+  translations = translator.translate(translations.text, dest='ko')
   for translation in translations:
     print(translation.origin, ' -> ', translation.text)
+    
+  print(pix)
 
-  # result = translator.translate(lines, src='en', dest='ko')
-  # print(result.text)
-  # print(translator.translate(lines, src='en', dest='ko'))
-  # result.append(translator.translate(line, src='en', dest='ko'))
-  
-  # print(result)
-                  
-  # print(type(text))
-  # print(text)
-  # print(pix)
   
 
 if __name__ == '__main__':

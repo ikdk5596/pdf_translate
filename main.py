@@ -15,17 +15,11 @@ def main(args):
   with fitz.open(pdf_path) as doc:
     text = ""
     for page in doc:
-      text += page.getText()
-  
-  '''
-  with open(pdf_path, 'rb') as f:
-    pdf = PdfFileReader(f)
-    information = pdf.getDocumentInfo()
-    number_of_pages = pdf.getNumPages()
-    page = pdf.getPage(0)
-    page_content = page.extractText()
-    text = page_content.encode('utf-8')
-  '''
+      if page.getText()[-1] == 'r':
+        print("enter")
+      elif page.getText()[-1] == '.':
+        print("end")
+      # text += page.getText()
   
   print(text)
   

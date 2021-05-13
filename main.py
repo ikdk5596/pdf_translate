@@ -11,15 +11,17 @@ from extract_pdf_info import extract_information
 
 def main(args):
   pdf_path = args.path
+  pix = []
   
   with fitz.open(pdf_path) as doc:
     text = ""
     for page in doc:
-      print(page.getText())
-      
+      text = page.getText().replace("\n", "").replace("\\", "")
+      pix.append() = page.get_pixmap()
       # text += page.getText()
   
   print(text)
+  print(pix)
   
 
 if __name__ == '__main__':

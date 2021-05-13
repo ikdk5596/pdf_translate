@@ -21,8 +21,10 @@ def main(args):
       text += page.getText().replace("\n", "").replace("\\", "").replace(".", ".\n")
       pix.append(page.get_pixmap())
       # text += page.getText()
-  
-  print(type(text))
+      
+  lines = text.readlines()
+  print(lines)
+  # print(type(text))
   # print(text)
   # print(pix)
   

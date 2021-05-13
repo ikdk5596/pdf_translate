@@ -15,10 +15,10 @@ def main(args):
     pdf = PdfFileReader(f)
     information = pdf.getDocumentInfo()
     number_of_pages = pdf.getNumPages()
+    page = pdf.getPage(0)
+    page_content = page.extractText()
+    text = page_content.encode('utf-8')
   
-  page = pdf.getPage(0)
-  page_content = page.extractText()
-  text = page_content.encode('utf-8')
   print(text)
   
 

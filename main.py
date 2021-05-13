@@ -22,7 +22,7 @@ def main(args):
       pix.append(page.get_pixmap())
       # text += page.getText()
       
-  lines = text.readlines()
+  lines = text.splitlines()
   print(lines)
   # print(type(text))
   # print(text)

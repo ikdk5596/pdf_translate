@@ -11,6 +11,7 @@ def extract_information(pdf_path):
     information = pdf.getDocumentInfo()
     number_of_pages = pdf.getNumPages()
     
+  test = pdf.getPage(0)
   txt = f"""
   Information about {pdf_path}:
   
@@ -22,4 +23,4 @@ def extract_information(pdf_path):
   Number of pages: {number_of_pages}
   """
     
-  return txt, information
+  return txt, information, test, number_of_pages

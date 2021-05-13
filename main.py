@@ -24,8 +24,10 @@ def main(args):
       # text += page.getText()
       
   # lines = text.splitlines()
-  lines = ["test page", "tttstst"]
-  result = translator.translate('this is a test page', dest='ko')
+  
+  result = translator.translate('this is a test page', src='en', dest='ko')
+  print(result.src)
+  print(result.dest)
   print(result.text)
   # result = translator.translate(lines, src='en', dest='ko')
   # print(result.text)

@@ -5,19 +5,27 @@
 
 import argparse
 from PyPDF2 import PdfFileReader
+import fitz
 from extract_pdf_info import extract_information
 
 
 def main(args):
   pdf_path = args.path
   
+  with fitz.open(pdf_path) as doc:
+    text = ""
+    for page in doc:
+      text += page.getText()
+  
+  '''
   with open(pdf_path, 'rb') as f:
     pdf = PdfFileReader(f)
     information = pdf.getDocumentInfo()
     number_of_pages = pdf.getNumPages()
     page = pdf.getPage(0)
     page_content = page.extractText()
-    text = page_content # .encode('utf-8')
+    text = page_content.encode('utf-8')
+  '''
   
   print(text)
   

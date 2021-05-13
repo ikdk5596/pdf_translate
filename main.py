@@ -13,6 +13,7 @@ from googletrans import Translator
 def main(args):
   pdf_path = args.path
   translator = Translator()
+  ja_text = []
   result = []
   pix = []
   
@@ -24,12 +25,16 @@ def main(args):
       
   lines = text.splitlines()
   
-  translations = translator.translate(lines, dest='jp')
-  translations = translator.translate(translations.text, dest='ko')
+  translations = translator.translate(lines, dest='ja')
   for translation in translations:
-    print(translation.origin, ' -> ', translation.text)
+    en_origin = translation.origin
+    ja_text.append(translation.text)
+  
+  translations = translator.translate(ja_text, dest='ko')
+  for translation in translations:
+    print(en_origin, ' -> ', translation.text)
     
-  print(pix)
+  # print(pix)
 
   
 

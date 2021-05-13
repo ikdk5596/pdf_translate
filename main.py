@@ -4,7 +4,7 @@ from extract_pdf_info import extract_information
 def main(args):
   pdf_path = args.path
   
-  txt, information = extract_information(pdf_path)
+  txt, information, test, number_of_pages = extract_information(pdf_path)
   print(txt)
   print()
   print(information)

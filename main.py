@@ -25,10 +25,10 @@ def main(args):
       
   # lines = text.splitlines()
   lines = ["test page", "tttstst"]
-  result = translator.translate("this is a test page", src='en', dest='ko')
+  result = translator.translate('this is a test page', dest='ko')
   print(result.text)
-  result = translator.translate(lines, src='en', dest='ko')
-  print(result.text)
+  # result = translator.translate(lines, src='en', dest='ko')
+  # print(result.text)
   # print(translator.translate(lines, src='en', dest='ko'))
   # result.append(translator.translate(line, src='en', dest='ko'))
   

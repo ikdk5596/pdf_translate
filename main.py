@@ -15,10 +15,7 @@ def main(args):
   with fitz.open(pdf_path) as doc:
     text = ""
     for page in doc:
-      if page.getText()[-1] == 'r':
-        print("enter")
-      elif page.getText()[-1] == '.':
-        print("end")
+      print(page)
       # text += page.getText()
   
   print(text)

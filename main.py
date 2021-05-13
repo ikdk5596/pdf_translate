@@ -25,8 +25,11 @@ def main(args):
       
   lines = text.splitlines()
   # print(lines)
+  a = 0
   for line in lines:
+    print(a)
     print(line)
+    a += 1
     # result.append(translator.translate(line, src='en', dest='ko'))
   
   # print(result)

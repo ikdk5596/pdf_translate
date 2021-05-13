@@ -15,7 +15,7 @@ def main(args):
   with fitz.open(pdf_path) as doc:
     text = ""
     for page in doc:
-      print(page)
+      print(page.getImg())
       # text += page.getText()
   
   print(text)

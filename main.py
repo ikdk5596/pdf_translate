@@ -25,10 +25,10 @@ def main(args):
       
   # lines = text.splitlines()
   
-  result = translator.translate('this is a test page', src='en', dest='ko')
-  print(result.src)
-  print(result.dest)
-  print(result.text)
+  translations = translator.translate(['The quick brown fox', 'jumps over', 'the lazy dog'], dest='ko')
+  for translation in translations:
+    print(translation.origin, ' -> ', translation.text)
+
   # result = translator.translate(lines, src='en', dest='ko')
   # print(result.text)
   # print(translator.translate(lines, src='en', dest='ko'))

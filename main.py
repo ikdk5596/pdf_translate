@@ -25,10 +25,8 @@ def main(args):
       
   lines = text.splitlines()
   # print(lines)
-  for line in lines:
-    print(line)
-    print(translator.translate(line, src='en', dest='ko'))
-    # result.append(translator.translate(line, src='en', dest='ko'))
+  print(translator.translate(lines[0], src='en', dest='ko'))
+  # result.append(translator.translate(line, src='en', dest='ko'))
   
   # print(result)
                   

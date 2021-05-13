@@ -6,7 +6,7 @@ def main(args):
   
   txt, information, test, number_of_pages = extract_information(pdf_path)
   text = test.extractText()
-  print(text.encode('utf-8')
+  print(text.encode('utf-8'))
   
 
 

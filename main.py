@@ -11,7 +11,7 @@ from translate import translate
 def main(args):
   pdf_path = args.path
   origin, result = translate(pdf_path)
-  print(origin ' -> ' result)
+  print(origin, ' -> ', result)
 
 
 if __name__ == '__main__':

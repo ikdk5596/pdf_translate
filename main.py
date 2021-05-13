@@ -4,9 +4,15 @@ from extract_pdf_info import extract_information
 def main(args):
   pdf_path = args.path
   
-  txt, information, test, number_of_pages = extract_information(pdf_path)
-  text = test.extractText()
-  print(text.encode('utf-8'))
+  with open(pdf_path, 'rb') as f:
+    pdf = PdfFileReader(f)
+    information = pdf.getDocumentInfo()
+    number_of_pages = pdf.getNumPages()
+  
+  page = pdf.getPage(0)
+  page_content = page.extractText()
+  text = page_content.encode('utf-8')
+  print(text)
   
 
 

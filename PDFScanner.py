@@ -22,13 +22,15 @@ device = PDFPageAggregator(rsrcmgr, laparams=laparams)
 interpreter = PDFPageInterpreter(rsrcmgr, device)
   
 def parse_obj(lt_objs): 
+  
   for obj in lt_objs:
     if isinstance(obj, LTTextBoxHorizontal):
       print ("%6d, %6d, %s" % (obj.bbox[0], obj.bbox[1], obj.get_text().replace('\n', '_')))
+
     elif isinstance(obj, LTFigure):
       parse_obj(obj._objs)
-        
- for page in PDFPage.create_pages(document):  
+      
+ for page in PDFPage.create_pages(document):
   interpreter.process_page(page)
   layout = device.get_result()
   

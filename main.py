@@ -14,7 +14,7 @@ def main(args):
   input_path = args.input
   output_path = args.output
   result = layout_scanner.get_pages(input_path)
-  layout_scanner.write_file('./', output_path, result)
+  layout_scanner.write_file('./', output_path, result[0])
   # p.PdfFileWriter.write(output_path, result)
   
   # origin, result = translate(input_path)

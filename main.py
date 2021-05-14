@@ -4,6 +4,7 @@
 # Reference : https://realpython.com/pdf-python/
 # 이후 Regular expression을 사용하여 replace 대체
 
+import PyPDF2 as p
 import argparse
 import layout_scanner
 from translate import translate
@@ -13,8 +14,8 @@ def main(args):
   input_path = args.input
   output_path = args.output
   result = layout_scanner.get_pages(input_path)
-  with open(args.output, 'w') as f:
-    f.write(''.join(result))
+  p.PdfFileWriter.write(output_path, result)
+  
   # origin, result = translate(input_path)
   # print(origin, ' -> ', result)
 

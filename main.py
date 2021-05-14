@@ -7,12 +7,15 @@
 import PyPDF2 as p
 import argparse
 import layout_scanner
+from pdfminer.pdfpage import PDFPage
 from translate import translate
 
 
 def main(args):
   input_path = args.input
   output_path = args.output
+  
+  PDFPage.get_pages()
   
   origin, result = translate(input_path)
   print(origin, ' -> ', result)

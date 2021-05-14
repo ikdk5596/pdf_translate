@@ -5,7 +5,7 @@
 # 이후 Regular expression을 사용하여 replace 대체
 
 import argparse
-from . import layout_scanner
+import layout_scanner
 from translate import translate
 
 

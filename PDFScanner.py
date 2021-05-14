@@ -30,7 +30,7 @@ def parse_obj(lt_objs):
     elif isinstance(obj, LTFigure):
       parse_obj(obj._objs)
       
- for page in PDFPage.create_pages(document):
+for page in PDFPage.create_pages(document):
   interpreter.process_page(page)
   layout = device.get_result()
   

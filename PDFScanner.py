@@ -1,5 +1,5 @@
 from pdfminer.pdfparser import PDFParser
-from pdfminer.pdfdocumnet import PDFDocument
+from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfpage import PDFPage, PDFTextExtractionNotAllowed
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfdevice import PDFDevice

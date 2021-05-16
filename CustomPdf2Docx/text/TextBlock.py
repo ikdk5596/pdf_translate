@@ -63,12 +63,11 @@ class TextBlock(Block):
         # print(lines_text)
         if lines_text != ['<image>']:
             lines_text = self.translator.translate(lines_text, lang_tgt='ko')
-            return '\n'.join(lines_text)
-        # else:
-            ## print(lines_text)
-            # return '\n'.join(lines_text)
-        else:
-            return '\n'.join(lines_text)
+        
+        lines_text = '\n'.join(lines_text)
+        print(lines_text)
+        # return '\n'.join(lines_text)
+        return lines_text
         
     
     @property

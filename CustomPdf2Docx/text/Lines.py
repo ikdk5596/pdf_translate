@@ -74,13 +74,19 @@ class Lines(ElementCollection):
         # sort lines
         self.sort()
         
+        # add google translator
+        translator = Translator()
+        
         # check each line
         lines = Lines()
         candidates = [self._instances[0]] # first line
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
             if line.text != '<image>':
-                print("yeah")
+                print(line.text)
+                #translation = translator.translate()
+            else:
+                print()
                 
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):

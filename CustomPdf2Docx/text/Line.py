@@ -20,6 +20,7 @@ from ..common.Element import Element
 from ..common.share import TextDirection
 from .Spans import Spans
 from ..image.ImageSpan import ImageSpan
+from google_trans_new import google_translator
 
 
 class Line(Element):
@@ -49,14 +50,17 @@ class Line(Element):
         super().__init__(raw)
         
         # collect spans
-        self.spans = Spans(parent=self).restore(raw.get('spans', []))        
+        self.spans = Spans(parent=self).restore(raw.get('spans', []))      
+        
+        # set Google Translator
+        self.translator = google_translator()        
 
     
     @property
     def text(self):
         '''Joining span text.'''
         spans_text = [span.text.strip() for span in self.spans] # strip span text
-        
+        print(spans_text)
         return ''.join(spans_text)
 
 

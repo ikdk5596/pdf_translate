@@ -52,7 +52,7 @@ class Line(Element):
         self.spans = Spans(parent=self).restore(raw.get('spans', []))      
         
         # set Google Translator
-        self.translator = google_translator()        
+        # self.translator = google_translator()        
 
     
     @property

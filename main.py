@@ -31,7 +31,11 @@ def main(args):
   # convert pdf 2 docx
   parse(input_path, output_path, start = 0, end = number_of_pages)
   
-  
+  # add google translator
+  translator = Translator()
+  translation = translator.translate("this is a test", src='en', dest='ko')
+  print(translation.text)
+
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description = 'PDF to TEXT converter',

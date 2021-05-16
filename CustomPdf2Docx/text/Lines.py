@@ -123,15 +123,9 @@ class Lines(ElementCollection):
         # NOTE: in case last group
         if candidates: lines.append(get_merged_line(candidates))
             
-        
-        
+
         # update lines in block
         self.reset(lines)
-        
-        candidates = [self._instances[0]] # first line
-        for i in range(1, len(self._instances)):
-            pre_line, line = self._instances[i-1], self._instances[i]
-            print(line.text)
 
 
     def split_back(self):

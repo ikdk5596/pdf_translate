@@ -58,6 +58,7 @@ class Line(Element):
         '''Joining span text.'''
         spans_text = [span.text.strip() for span in self.spans] # strip span text
         result = []
+        '''
         # add google translator
         translator=Translator()
         if spans_text != ['<image>']:
@@ -67,6 +68,7 @@ class Line(Element):
             text = [translation.text]
         else:
             text = spans_text
+        '''
         
         return ''.join(spans_text)
 

@@ -235,10 +235,13 @@ class Converter:
         
         # convert page by page
         t0 = perf_counter()        
+        self._parse_and_create_pages_with_multi_processing(docx_filename, page_indexes, kwargs)
+        '''
         if kwargs.get('multi_processing', False):
             self._parse_and_create_pages_with_multi_processing(docx_filename, page_indexes, kwargs)
         else:
             self._parse_and_create_pages(docx_filename, page_indexes, kwargs)       
+        '''
         print(f'\n{"-"*50}\nTerminated in {perf_counter()-t0}s.')        
 
 

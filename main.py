@@ -32,10 +32,9 @@ def main(args):
   
   # add google translator
   translator = Translator()
-  print(translator.detect('this is a test'))
   # translation = translator.translate('this is a test', src='en', dest='ko')
   translation = translator.translate('Hello', dest = 'ko')
-  print(translation.text)
+  print(translation)
 
 
 if __name__ == '__main__':

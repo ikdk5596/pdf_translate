@@ -39,7 +39,9 @@ def main(args):
   doc = docx.Document(docx_path)
   paragraphs = [para.text for para in doc.paragraphs]
   translator = Translator()
+  print(paragraphs)
   doc = docx.Document()
+  '''
   for i, para in enumerate(paragraphs):
     try:
       translation = translator.translate(para,src=sourceLanguageCode,dest=targetLanguageCode)
@@ -50,6 +52,7 @@ def main(args):
       print("Error "+str(i))
   doc.save(output_path)
   print("Document translation is completed.")
+  '''
   
 
 if __name__ == '__main__':

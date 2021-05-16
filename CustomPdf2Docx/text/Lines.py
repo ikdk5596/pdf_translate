@@ -123,7 +123,9 @@ class Lines(ElementCollection):
         # NOTE: in case last group
         if candidates: lines.append(get_merged_line(candidates))
             
-
+        
+        
+        print(lines)
         # update lines in block
         self.reset(lines)
 

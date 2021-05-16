@@ -84,6 +84,7 @@ class Lines(ElementCollection):
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
             
+            line.text = "test"
             print(line.text)
             
             # ignore this line if overlap with previous line

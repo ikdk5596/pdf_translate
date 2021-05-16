@@ -60,10 +60,10 @@ class Line(Element):
         result = []
         
         # add google translator
-        translator=Translator()
+        translator=google_translator()  
         if spans_text != ['<image>']:
             # print(type(spans_text[0]))
-            translation = translator.translate(spans_text[0], src='en', dest='ko')
+            translation = translator.translate(spans_text[0], lang_tgt='ko')
             # print(translation.text)
             text = [translation.text]
         else:

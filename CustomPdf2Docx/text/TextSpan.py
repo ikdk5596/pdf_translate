@@ -91,6 +91,7 @@ class TextSpan(Element):
     def text(self):
         '''Joining chars in text span'''
         chars = [char.c for char in self.chars]        
+        print(chars)
         return ''.join(chars)
 
     

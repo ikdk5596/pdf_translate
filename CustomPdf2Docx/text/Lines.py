@@ -70,7 +70,7 @@ class Lines(ElementCollection):
 
             for c_line in candidates[1:]:
                 line.add(c_line.spans)
-            print(line)
+            print(line.text)
             return line
 
         # sort lines

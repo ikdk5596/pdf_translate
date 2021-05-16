@@ -22,6 +22,9 @@ from reportlab.platypus import Paragraph
 from reportlab.platypus import SimpleDocTemplate
 
 
+LANG = 'ko'
+
+
 def get_translated_page_content(reader, lang):
     """
     Reads page content from the reader, translates it,
@@ -46,7 +49,7 @@ def translate_pdf(path, lang):
     page_contents = get_translated_page_content(reader, lang)
 
     page_text = []
-    name = f'{'ko'}_{path}'
+    name = f'{LANG}_{path}'
     pdf = SimpleDocTemplate(name, pagesize=letter)
 
     for text in page_contents:

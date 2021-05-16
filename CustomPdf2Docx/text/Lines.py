@@ -107,7 +107,7 @@ class Lines(ElementCollection):
                 candidates = []
                 if line.text != ['<image>']:
                     print(line.text)
-                    line.text = translator.translate(lines_text, lang_tgt='ko')
+                    line.text = translator.translate(line.text, lang_tgt='ko')
                 # add this line
                 lines.append(line)
             
@@ -116,7 +116,7 @@ class Lines(ElementCollection):
 
                 if line.text != ['<image>']:
                     print(line.text)
-                    line.text = translator.translate(lines_text, lang_tgt='ko')
+                    line.text = translator.translate(line.text, lang_tgt='ko')
                 candidates.append(line)
             
             # prepare for merging lines: invalid -> add each line directly
@@ -126,7 +126,7 @@ class Lines(ElementCollection):
                 candidates = []
                 if line.text != ['<image>']:
                     print(line.text)
-                    line.text = translator.translate(lines_text, lang_tgt='ko')
+                    line.text = translator.translate(line.text, lang_tgt='ko')
                 # add this line
                 lines.append(line)
                   

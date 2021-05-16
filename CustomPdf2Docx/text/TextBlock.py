@@ -60,7 +60,7 @@ class TextBlock(Block):
     def text(self):
         '''Get text content in block, joning each line with ``\\n``.'''
         lines_text = [line.text for line in self.lines]
-            
+        print(lines_text)
         # if lines_text != ['<image>']:
             # lines_text = self.translator.translate(lines_text, lang_tgt='ko')
             # return '\n'.join(text)

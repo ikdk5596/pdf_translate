@@ -128,7 +128,7 @@ class Lines(ElementCollection):
                 # add this line
                 lines.append(line)
 
-            print(lines)
+            print(lines[0])
                   
         # NOTE: in case last group
         if candidates: lines.append(get_merged_line(candidates))

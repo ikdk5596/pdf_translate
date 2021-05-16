@@ -48,9 +48,6 @@ class Line(Element):
         # remove key 'bbox' since it is calculated from contained spans
         if 'bbox' in raw: raw.pop('bbox') 
         super().__init__(raw)
-
-        # add translator
-        self.translator=Translator()
         
         # collect spans
         self.spans = Spans(parent=self).restore(raw.get('spans', []))        
@@ -60,11 +57,14 @@ class Line(Element):
     def text(self):
         '''Joining span text.'''
         spans_text = [span.text.strip() for span in self.spans] # strip span text
-        # add translate
+        # add google translator
+        '''
+        translator=Translator()
         if spans_text != ['<image>']:
             print(type(spans_text[0]))
-            # spans_text[0] = self.translator.translate(spans_text[0], src='en', dest='ko')
+            spans_text[0] = translator.translate(spans_text[0], src='en', dest='ko')
             # print(spans_text[0])
+        '''
         return ''.join(spans_text)
 
 

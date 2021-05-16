@@ -29,30 +29,9 @@ def main(args):
     read_pdf = PyPDF2.PdfFileReader(pdf_file)
     number_of_pages = read_pdf.getNumPages()
   
-  '''
-  pdf_reader = PyPDF2.PdfFileReader(str(input_path))
-  page = pdf_reader.getPage(0)
-  print(page.mediaBox)
-  '''
+  # convert pdf 2 docx
   parse(input_path, docx_path, start = 0, end = number_of_pages)
   
-  doc = docx.Document(docx_path)
-  paragraphs = [para.text for para in doc.paragraphs]
-  translator = Translator()
-  print(paragraphs)
-  doc = docx.Document()
-  '''
-  for i, para in enumerate(paragraphs):
-    try:
-      translation = translator.translate(para,src=sourceLanguageCode,dest=targetLanguageCode)
-      doc.add_paragraph(translation.text)
-      time.sleep(0.1)
-      print("Success "+str(i))
-    except:
-      print("Error "+str(i))
-  doc.save(output_path)
-  print("Document translation is completed.")
-  '''
   
 
 if __name__ == '__main__':

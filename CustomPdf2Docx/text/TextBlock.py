@@ -48,7 +48,8 @@ class TextBlock(Block):
 
         # collect lines
         self.lines = Lines(parent=self).restore(raw.get('lines', []))
-        print(dir(self.lines._instances))
+        for line in self.lines:
+            line.text = "test"
         
         # set type
         self.set_text_block()
@@ -68,6 +69,7 @@ class TextBlock(Block):
         # lines_text = '\n'.join(lines_text)
         # print(lines_text)
         # return lines_text
+        print(lines_text)
         return '\n'.join(lines_text)
         
         

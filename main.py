@@ -46,7 +46,7 @@ def translate_pdf(path, lang):
     page_contents = get_translated_page_content(reader, lang)
 
     page_text = []
-    name = f'{LANG}_{path}'
+    name = f'{'ko'}_{path}'
     pdf = SimpleDocTemplate(name, pagesize=letter)
 
     for text in page_contents:

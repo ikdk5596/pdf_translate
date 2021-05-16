@@ -13,7 +13,7 @@ import docx
 import time
 import argparse
 import layout_scanner
-from googletran_new import google_translator
+from google_trans_new import google_translator
 from pdfminer.pdfpage import PDFPage
 
 

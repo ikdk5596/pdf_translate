@@ -36,9 +36,7 @@ def main(args):
   parse(input_path, docx_path, start = 0, end = number_of_pages)
   doc = Document(docx_path)
   all_paras = doc.paragraphs
-  for para in all_paras:
-    para.text
-    para.image
+  print(all_paras)
 
 
 if __name__ == '__main__':

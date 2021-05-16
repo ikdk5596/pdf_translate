@@ -7,7 +7,7 @@
 import re
 import PyPDF2
 # from pdf2docx import parse
-from pdf2docx import parse
+from CustomPdf2Docx import parse
 # from pdf2docx 
 import docx
 import time

@@ -118,6 +118,9 @@ class Lines(ElementCollection):
                 for c_line in candidates: lines.append(c_line)
                 candidates = []
                 
+                print(line)
+                translate(line)
+                print(line)
                 # add this line
                 lines.append(line)
                   
@@ -127,8 +130,14 @@ class Lines(ElementCollection):
 
         # update lines in block
         self.reset(lines)
-        print(lines)
 
+
+    @property
+    def translate(self, line):
+        translator = google_translator()
+        if line.text != ['<image>']:
+            line.text = translator.translate(lines_text, lang_tgt='ko')
+        
 
     def split_back(self):
         '''Split lines into groups, in which all lines are from same original text block.

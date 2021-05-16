@@ -35,7 +35,7 @@ def get_translated_page_content(reader, lang):
         page = reader.getPage(p)
         text = page.extractText()
         translation = translator.translate(text, lang_tgt='ko')
-        result_text = translation.text.replace("\n", " ").replace("W", "")
+        result_text = translation.replace("\n", " ").replace("W", "")
         page_contents.append(result_text)
     return page_contents
   

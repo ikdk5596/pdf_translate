@@ -54,7 +54,7 @@ def translate_pdf(path, lang):
 
     for text in page_contents:
         page_text.append(
-            Paragraph(text, encoding='utf-8', style=regular))
+            Paragraph(text, encoding='utf-8'))
 
     pdf.build(page_text)
   

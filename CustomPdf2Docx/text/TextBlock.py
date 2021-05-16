@@ -39,6 +39,7 @@ from ..common import docx
 
 class TextBlock(Block):
     '''Text block.'''
+    @__init__.setter
     def __init__(self, raw:dict=None):
         if raw is None: raw = {}
         

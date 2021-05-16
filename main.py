@@ -17,6 +17,7 @@ import layout_scanner
 from pdfminer.pdfpage import PDFPage
 from docx import Document
 from google_trans_new import google_translator
+import os
 
   
 def main(args):
@@ -30,7 +31,7 @@ def main(args):
   with open(input_path, 'rb') as pdf_file:
     read_pdf = PyPDF2.PdfFileReader(pdf_file)
     number_of_pages = read_pdf.getNumPages()
-  
+  if os.path.exists(output_path): os.remove(filename)
   # convert pdf 2 docx
   parse(input_path, output_path, start = 0, end = number_of_pages)
 

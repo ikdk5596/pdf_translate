@@ -29,7 +29,7 @@ from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 from .Lines import Lines
-# from google_trans_new import google_translator
+from google_trans_new import google_translator
 from ..common.share import RectType, TextDirection, TextAlignment
 from ..common.Block import Block
 from ..common.share import rgb_component_from_name
@@ -53,7 +53,7 @@ class TextBlock(Block):
         self.set_text_block()
         
         # set Google Translator
-        # self.translator = google_translator()
+        self.translator = google_translator()
 
 
     @property

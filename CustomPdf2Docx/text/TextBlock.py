@@ -67,7 +67,7 @@ class TextBlock(Block):
         # lines_text = '\n'.join(lines_text)
         # print(lines_text)
         # return lines_text
-        print(lines_text)
+        # print(lines_text)
         return '\n'.join(lines_text)
         
         

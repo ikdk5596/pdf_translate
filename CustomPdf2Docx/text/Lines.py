@@ -85,7 +85,7 @@ class Lines(ElementCollection):
             
             if line.text != '<image>':
                 translation = translator.translate(line.text, src = 'en', dest = 'ko')
-                print(translation)
+                line.text = translation.text
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):
                 print(f'Ignore Line "{line.text}" due to overlap')

@@ -29,7 +29,7 @@ from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 from .Lines import Lines
-# from google_trans_new import google_translator
+from google_trans_new import google_translator
 from ..common.share import RectType, TextDirection, TextAlignment
 from ..common.Block import Block
 from ..common.share import rgb_component_from_name
@@ -48,7 +48,7 @@ class TextBlock(Block):
 
         # collect lines
         self.lines = Lines(parent=self).restore(raw.get('lines', []))
-        
+
         # set type
         self.set_text_block()
         
@@ -61,14 +61,13 @@ class TextBlock(Block):
         '''Get text content in block, joning each line with ``\\n``.'''
         lines_text = [line.text for line in self.lines]
 
-        '''
         if lines_text != ['<image>']:
             lines_text = self.translator.translate(lines_text, lang_tgt='ko')
             # return '\n'.join(text)
         # else:
             ## print(lines_text)
             # return '\n'.join(lines_text)
-        '''
+
         return '\n'.join(lines_text)
         
     

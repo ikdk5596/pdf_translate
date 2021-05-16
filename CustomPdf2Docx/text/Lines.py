@@ -127,6 +127,11 @@ class Lines(ElementCollection):
         
         # update lines in block
         self.reset(lines)
+        
+        candidates = [self._instances[0]] # first line
+        for i in range(1, len(self._instances)):
+            pre_line, line = self._instances[i-1], self._instances[i]
+            print(line)
 
 
     def split_back(self):

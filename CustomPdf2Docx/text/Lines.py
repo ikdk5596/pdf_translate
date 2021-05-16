@@ -10,7 +10,6 @@ from ..common.Collection import ElementCollection
 from ..common.docx import add_stop
 from ..common.share import TextAlignment
 from ..common import constants
-from google_trans_new import google_translator
 
 
 class Lines(ElementCollection):
@@ -74,18 +73,12 @@ class Lines(ElementCollection):
         # sort lines
         self.sort()
         
-        # add google translator
-        translator = google_translator()
-        
         
         # check each line
         lines = Lines()
         candidates = [self._instances[0]] # first line
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
-            
-            print(line)
-            # print(line.text)
             
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):

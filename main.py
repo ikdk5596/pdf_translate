@@ -19,7 +19,6 @@ from translate import translate
 
 
 def main(args):
-  docx_path = 'temp.docx'
   input_path = args.input
   output_path = args.output
   sourceLanguageCode = args.sourceLanguageCode
@@ -30,7 +29,7 @@ def main(args):
     number_of_pages = read_pdf.getNumPages()
   
   # convert pdf 2 docx
-  parse(input_path, docx_path, start = 0, end = number_of_pages)
+  parse(input_path, output_path, start = 0, end = number_of_pages)
   
   
 

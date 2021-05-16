@@ -15,7 +15,6 @@ import argparse
 import layout_scanner
 from googletrans import Translator
 from pdfminer.pdfpage import PDFPage
-from translate import translate
 
 
 def main(args):

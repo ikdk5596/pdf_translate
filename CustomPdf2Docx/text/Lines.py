@@ -67,8 +67,10 @@ class Lines(ElementCollection):
         # merge lines
         def get_merged_line(candidates):
             line = candidates[0]
+
             for c_line in candidates[1:]:
                 line.add(c_line.spans)
+            print(line)
             return line
 
         # sort lines
@@ -127,8 +129,6 @@ class Lines(ElementCollection):
                 '''
                 # add this line
                 lines.append(line)
-
-            print(lines[1])
                   
         # NOTE: in case last group
         if candidates: lines.append(get_merged_line(candidates))

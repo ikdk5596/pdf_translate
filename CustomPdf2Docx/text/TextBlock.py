@@ -51,6 +51,9 @@ class TextBlock(Block):
 
         # set type
         self.set_text_block()
+        
+        # set Google Translator
+        self.translator = google_translator()
 
 
     @property
@@ -58,9 +61,10 @@ class TextBlock(Block):
         '''Get text content in block, joning each line with ``\\n``.'''
         lines_text = [line.text for line in self.lines]
         if lines_text != ['<image>']:
-            print(lines_text)
+            text = translator.translate(lines_text, lang_tgt='ko')
+            print(text)
         else:
-            print()
+            print(lines_text)
         return '\n'.join(lines_text)
 
     

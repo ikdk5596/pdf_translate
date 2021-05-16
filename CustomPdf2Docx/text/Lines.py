@@ -84,6 +84,7 @@ class Lines(ElementCollection):
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
             
+            print(line.text)
             
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):
@@ -121,14 +122,13 @@ class Lines(ElementCollection):
                 # release candidate lines
                 for c_line in candidates: lines.append(c_line)
                 candidates = []
-
+                
                 # add this line
                 lines.append(line)
                   
         # NOTE: in case last group
         if candidates: lines.append(get_merged_line(candidates))
             
-        print(lines)
 
         # update lines in block
         self.reset(lines)

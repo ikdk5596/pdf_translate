@@ -7,6 +7,7 @@
 import re
 import PyPDF2
 from pdf2docx import parse
+# from pdf2docx 
 import argparse
 import layout_scanner
 from pdfminer.pdfpage import PDFPage

@@ -33,7 +33,8 @@ def main(args):
   # add google translator
   translator = Translator()
   print(translator.detect('this is a test'))
-  translation = translator.translate('this is a test', src='en', dest='ko')
+  # translation = translator.translate('this is a test', src='en', dest='ko')
+  translation = translator.translate('안녕하세요')
   print(translation.text)
 
 

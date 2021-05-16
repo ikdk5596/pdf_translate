@@ -60,6 +60,7 @@ class Line(Element):
     def text(self):
         '''Joining span text.'''
         spans_text = [span.text.strip() for span in self.spans] # strip span text
+        print(spans_text)
         return ''.join(spans_text)
 
 

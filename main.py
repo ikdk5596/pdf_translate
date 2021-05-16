@@ -37,12 +37,8 @@ def main(args):
   doc = Document(docx_path)
   all_paras = doc.paragraphs
   for para in all_paras:
-    print(para)
-    try:
-      para.text = translator.translate(para.text, lang_tgt='ko')
-      print(para.text)
-    except:
-      print()
+    para.text
+    para.image
 
 
 if __name__ == '__main__':

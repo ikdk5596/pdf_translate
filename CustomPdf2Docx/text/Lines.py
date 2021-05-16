@@ -83,8 +83,8 @@ class Lines(ElementCollection):
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
             if line.text != '<image>':
-                translation = translator.translate(line.text, src = 'en', dest = 'ko')
-                translation = translator.translate("this is a test", src = 'en', dest = 'ko')
+                # translation = translator.translate(line.text, src = 'en', dest = 'ko')
+                translation = translator.translate("this is a test", dest='ko')
                 print(translation.text)
             else:
                 print()

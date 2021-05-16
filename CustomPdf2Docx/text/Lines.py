@@ -15,9 +15,6 @@ from ..common import constants
 
 class Lines(ElementCollection):
     '''Collection of text lines.'''
-    
-    def __init__(self):
-        self.translator = Translator()
 
     @property
     def unique_parent(self):
@@ -78,6 +75,7 @@ class Lines(ElementCollection):
         self.sort()
         
         # add google translator
+        translator = Translator()
         
         # check each line
         lines = Lines()
@@ -86,7 +84,7 @@ class Lines(ElementCollection):
             pre_line, line = self._instances[i-1], self._instances[i]
             if line.text != '<image>':
                 # translation = translator.translate(line.text, src = 'en', dest = 'ko')
-                translation = self.translator.translate("this is a test", dest='ko')
+                translation = translator.translate("this is a test", dest='ko')
                 print(translation.text)
             else:
                 print()

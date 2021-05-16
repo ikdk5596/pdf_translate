@@ -361,8 +361,9 @@ class Lines(ElementCollection):
     def translate_text(self):
         translator = Translator()
         for i, line in enumerate(self._instances):
-            print(line.text)
-    
+            if line.text != '<image>':
+                print(translator.translate(line.text, src = 'en', dest = 'ko'))
+                
 
     def make_docx(self, p):
         '''Create lines in paragraph.'''

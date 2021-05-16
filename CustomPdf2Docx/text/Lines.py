@@ -76,7 +76,7 @@ class Lines(ElementCollection):
         
         # check each line
         lines = Lines()
-        print(lines)
+        print(lines[0])
         candidates = [self._instances[0]] # first line
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]

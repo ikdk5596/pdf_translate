@@ -67,9 +67,9 @@ class Lines(ElementCollection):
         # merge lines
         def get_merged_line(candidates):
             line = candidates[0]
-            print(line)
             for c_line in candidates[1:]:
                 line.add(c_line.spans)
+                print(c_line)
             return line
 
         # sort lines

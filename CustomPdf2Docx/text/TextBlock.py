@@ -48,7 +48,7 @@ class TextBlock(Block):
 
         # collect lines
         self.lines = Lines(parent=self).restore(raw.get('lines', []))
-        print([line.text for line in self.lines])
+        
         # set type
         self.set_text_block()
         
@@ -127,6 +127,7 @@ class TextBlock(Block):
         '''Add line or lines to TextBlock.'''        
         if isinstance(line_or_lines, (Lines, list, tuple)):
             for line in line_or_lines:
+                print(line)
                 self.lines.append(line)
         else:
             self.lines.append(line_or_lines)

@@ -26,13 +26,23 @@ def main(args):
   sourceLanguageCode = args.sourceLanguageCode
   targetLanguageCode = args.targetLanguageCode
  
+  translator = google_translator()
   
   with open(input_path, 'rb') as pdf_file:
     read_pdf = PyPDF2.PdfFileReader(pdf_file)
     number_of_pages = read_pdf.getNumPages()
   if os.path.exists(output_path): os.remove(output_path)
   # convert pdf 2 docx
-  parse(input_path, output_path, start = 0, end = number_of_pages)
+  parse(input_path, docx_path, start = 0, end = number_of_pages)
+  doc = Document(docx_path)
+  all_paras = doc.paragraphs
+  for para in all_paras:
+    print(para)
+    try:
+      para.text = translator.translate(para.text, lang_tgt='ko')
+      print(para.text)
+    except:
+      print()
 
 
 if __name__ == '__main__':

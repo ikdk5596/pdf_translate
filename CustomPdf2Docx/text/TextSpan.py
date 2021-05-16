@@ -91,7 +91,6 @@ class TextSpan(Element):
     def text(self):
         '''Joining chars in text span'''
         chars = [char.c for char in self.chars]        
-        print(chars)
         return ''.join(chars)
 
     
@@ -162,6 +161,7 @@ class TextSpan(Element):
         original_text = self.text
         if not original_text.startswith(' '*2): return False
 
+        print(original_text)
         # keep one blank
         num_blanks = len(original_text) - len(original_text.lstrip())
         self.chars = self.chars[num_blanks-1:]

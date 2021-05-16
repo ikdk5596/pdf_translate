@@ -16,7 +16,6 @@ Data structure of line in text block referring to this
 
 from fitz import Point
 from collections import Iterable
-from googletrans import Translator
 from ..common.Element import Element
 from ..common.share import TextDirection
 from .Spans import Spans

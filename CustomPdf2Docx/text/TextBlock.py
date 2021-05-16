@@ -39,7 +39,6 @@ from ..common import docx
 
 class TextBlock(Block):
     '''Text block.'''
-    @__init__.setter
     def __init__(self, raw:dict=None):
         if raw is None: raw = {}
         
@@ -49,8 +48,6 @@ class TextBlock(Block):
 
         # collect lines
         self.lines = Lines(parent=self).restore(raw.get('lines', []))
-        for line in self.lines:
-            line.text = "test"
         
         # set type
         self.set_text_block()

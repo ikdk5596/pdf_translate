@@ -73,9 +73,6 @@ class Lines(ElementCollection):
 
         # sort lines
         self.sort()
-
-        # Add google translator
-        translator = Translator()
         
         # check each line
         lines = Lines()
@@ -119,12 +116,7 @@ class Lines(ElementCollection):
                 # release candidate lines
                 for c_line in candidates: lines.append(c_line)
                 candidates = []
-                '''
-                if line.text != '<image>':
-                    translation = translator.translate(line.text, src = 'en', dest = 'ko')
-                    # print(translation.text)
-                    print(line)
-                '''
+
                 # add this line
                 lines.append(line)
                   
@@ -357,13 +349,6 @@ class Lines(ElementCollection):
         # no break for last row
         for line in rows[-1]: line.line_break = 0
 
-            
-    def translate_text(self):
-        translator = Translator()
-        for i, line in enumerate(self._instances):
-            if line.text != '<image>':
-                print(translator.translate(line.text, src='en', dest='ko').text)
-                
 
     def make_docx(self, p):
         '''Create lines in paragraph.'''
@@ -372,7 +357,6 @@ class Lines(ElementCollection):
         idx1 = (idx0+2)%4 # H: x1->2, or V: y0->1
         current_pos = block.left_space
 
-        self.translate_text()
         for i, line in enumerate(self._instances):
             # left indentation implemented with tab
             pos = block.left_space + (line.bbox[idx0]-block.bbox[idx0])

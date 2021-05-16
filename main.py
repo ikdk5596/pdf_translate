@@ -15,11 +15,6 @@ import argparse
 import layout_scanner
 from pdfminer.pdfpage import PDFPage
 from docx import Document
-from docx.enum.style import WD_STYLE_TYPE
-from docx.shared import Pt
-import operator
-from functools import reduce
-import sys
 from google_trans_new import google_translator
 
   
@@ -36,7 +31,7 @@ def main(args):
     number_of_pages = read_pdf.getNumPages()
   
   # convert pdf 2 docx
-  parse(input_path, docx_path, start = 0, end = number_of_pages)
+  parse(input_path, output_path, start = 0, end = number_of_pages)
 
 
 if __name__ == '__main__':

@@ -3,6 +3,7 @@
 # Organization : Repeblic of Korean Army
 # Reference : https://realpython.com/pdf-python/
 # 이후 Regular expression을 사용하여 replace 대체
+# -*- coding: UTF-8 -*-
 
 import re
 import PyPDF2

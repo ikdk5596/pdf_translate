@@ -69,7 +69,6 @@ class Lines(ElementCollection):
             line = candidates[0]
             for c_line in candidates[1:]:
                 line.add(c_line.spans)
-                print(c_line)
             return line
 
         # sort lines
@@ -83,10 +82,7 @@ class Lines(ElementCollection):
         candidates = [self._instances[0]] # first line
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
-            
-            if line.text != '<image>':
-                translation = translator.translate(line.text, src = 'en', dest = 'ko')
-                # print(translation.text)
+           
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):
                 print(f'Ignore Line "{line.text}" due to overlap')
@@ -123,10 +119,17 @@ class Lines(ElementCollection):
                 # release candidate lines
                 for c_line in candidates: lines.append(c_line)
                 candidates = []
-
+                '''
+                if line.text != '<image>':
+                    translation = translator.translate(line.text, src = 'en', dest = 'ko')
+                    # print(translation.text)
+                    print(line)
+                '''
                 # add this line
                 lines.append(line)
 
+            print(lines)
+                  
         # NOTE: in case last group
         if candidates: lines.append(get_merged_line(candidates))
 

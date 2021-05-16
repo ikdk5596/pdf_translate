@@ -56,8 +56,7 @@ class Line(Element):
     def text(self):
         '''Joining span text.'''
         spans_text = [span.text.strip() for span in self.spans] # strip span text
-        if spans_text != '<image>':
-            print(spans_text)
+        print(type(spans_text))
         return ''.join(spans_text)
 
 

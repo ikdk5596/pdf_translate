@@ -54,7 +54,7 @@ class Lines(ElementCollection):
             spans.extend(line.image_spans)
         return spans
 
-    
+    @property
     def join(self, line_overlap_threshold:float, line_merging_threshold:float):
         '''Merge lines aligned horizontally, e.g. make inline image as a span in text line.'''
         # skip if empty

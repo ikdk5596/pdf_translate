@@ -78,6 +78,7 @@ class Lines(ElementCollection):
         # check each line
         lines = Lines()
         candidates = [self._instances[0]] # first line
+        translator = google_translator()
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
                        
@@ -110,6 +111,9 @@ class Lines(ElementCollection):
             
             # prepare for merging lines: valid
             elif valid_joining_lines(line, candidates):
+
+                if line.text != ['<image>']:
+                    line.text = translator.translate(lines_text, lang_tgt='ko')
                 candidates.append(line)
             
             # prepare for merging lines: invalid -> add each line directly
@@ -118,9 +122,6 @@ class Lines(ElementCollection):
                 for c_line in candidates: lines.append(c_line)
                 candidates = []
                 
-                print(line)
-                translate(line)
-                print(line)
                 # add this line
                 lines.append(line)
                   

@@ -362,7 +362,7 @@ class Lines(ElementCollection):
         translator = Translator()
         for i, line in enumerate(self._instances):
             if line.text != '<image>':
-                print(translator.translate(line.text, src = 'en', dest = 'ko'))
+                print(translator.translate(line.text, src='en', dest='ko').text)
                 
 
     def make_docx(self, p):

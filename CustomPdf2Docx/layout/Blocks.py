@@ -559,7 +559,7 @@ class Blocks(ElementCollection):
                 blocks.append(block)
             else:
                 text_block = TextBlock()
-                print(lines)
+                print(lines.line)
                 text_block.add(lines)
                 blocks.append(text_block)
 

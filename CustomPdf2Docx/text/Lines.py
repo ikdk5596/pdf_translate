@@ -67,6 +67,7 @@ class Lines(ElementCollection):
         # merge lines
         def get_merged_line(candidates):
             line = candidates[0]
+            print(line)
             for c_line in candidates[1:]:
                 line.add(c_line.spans)
             return line
@@ -85,7 +86,7 @@ class Lines(ElementCollection):
             
             if line.text != '<image>':
                 translation = translator.translate(line.text, src = 'en', dest = 'ko')
-                print(translation.text)
+                # print(translation.text)
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):
                 print(f'Ignore Line "{line.text}" due to overlap')

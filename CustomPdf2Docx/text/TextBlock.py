@@ -61,14 +61,14 @@ class TextBlock(Block):
         '''Get text content in block, joning each line with ``\\n``.'''
         lines_text = [line.text for line in self.lines]
         if lines_text != ['<image>']:
-            text = self.translator.translate(lines_text, lang_tgt='ko')
-            return '\n'.join(text)
-        else:
-            #print(lines_text)
-            return '\n'.join(lines_text)
-            
+            lines_text = self.translator.translate(lines_text, lang_tgt='ko')
+            # return '\n'.join(text)
+        # else:
+            ## print(lines_text)
+            # return '\n'.join(lines_text)
         
-
+        return '\n'.join(lines_text)
+        
     
     @property
     def text_direction(self):

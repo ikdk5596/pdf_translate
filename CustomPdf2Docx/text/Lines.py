@@ -79,7 +79,7 @@ class Lines(ElementCollection):
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
             
-            if line.text != '<image>'
+            if line.text != '<image>':
                 print(line.text)
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):

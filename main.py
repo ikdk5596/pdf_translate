@@ -10,6 +10,7 @@ import PyPDF2
 from CustomPdf2Docx.CustomPdf2Docx import parse
 # from pdf2docx 
 import docx
+import time
 import argparse
 import layout_scanner
 from pdfminer.pdfpage import PDFPage

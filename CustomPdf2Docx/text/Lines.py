@@ -84,9 +84,6 @@ class Lines(ElementCollection):
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
             
-            if line.text != ['<image>']:
-                line.text = translator.translate(lines_text, lang_tgt='ko')
-            # print(line)
             
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):
@@ -134,6 +131,7 @@ class Lines(ElementCollection):
 
         # update lines in block
         self.reset(lines)
+        print(lines)
 
 
     def split_back(self):

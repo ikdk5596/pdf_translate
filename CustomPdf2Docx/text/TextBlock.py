@@ -127,7 +127,6 @@ class TextBlock(Block):
         '''Add line or lines to TextBlock.'''        
         if isinstance(line_or_lines, (Lines, list, tuple)):
             for line in line_or_lines:
-                print(line)
                 self.lines.append(line)
         else:
             self.lines.append(line_or_lines)

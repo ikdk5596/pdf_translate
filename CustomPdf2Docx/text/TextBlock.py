@@ -48,7 +48,7 @@ class TextBlock(Block):
 
         # collect lines
         self.lines = Lines(parent=self).restore(raw.get('lines', []))
-        print(self.lines._instances.__dict__)
+        print(dir(self.lines._instances))
         
         # set type
         self.set_text_block()

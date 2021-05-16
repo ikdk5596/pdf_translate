@@ -54,7 +54,7 @@ class Lines(ElementCollection):
             spans.extend(line.image_spans)
         return spans
 
-    @property
+    
     def join(self, line_overlap_threshold:float, line_merging_threshold:float):
         '''Merge lines aligned horizontally, e.g. make inline image as a span in text line.'''
         # skip if empty
@@ -84,8 +84,8 @@ class Lines(ElementCollection):
         for i in range(1, len(self._instances)):
             pre_line, line = self._instances[i-1], self._instances[i]
             
-            line.text = "test"
-            print(line.text)
+            print(line)
+            # print(line.text)
             
             # ignore this line if overlap with previous line
             if line.get_main_bbox(pre_line, threshold=line_overlap_threshold):

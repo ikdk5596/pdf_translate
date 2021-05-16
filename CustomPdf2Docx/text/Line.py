@@ -65,7 +65,7 @@ class Line(Element):
             # print(type(spans_text[0]))
             translation = translator.translate(spans_text, lang_tgt='ko')
             # print(translation.text)
-            text = [translation]
+            text = translation
         else:
             text = spans_text
         

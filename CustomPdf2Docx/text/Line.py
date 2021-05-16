@@ -62,7 +62,8 @@ class Line(Element):
         spans_text = [span.text.strip() for span in self.spans] # strip span text
         # add translate
         if spans_text != ['<image>']:
-            spans_text[0] = self.translator.translate(spans_text[0], src='en', dest='ko')
+            print(type(spans_text[0]))
+            # spans_text[0] = self.translator.translate(spans_text[0], src='en', dest='ko')
             # print(spans_text[0])
         return ''.join(spans_text)
 

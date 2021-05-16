@@ -32,8 +32,8 @@ def main(args):
   
   # add google translator
   translator = Translator()
-  test = ['this is a test']
-  translation = translator.translate(test, src='en', dest='ko')
+  print(translator.detect('this is a test'))
+  translation = translator.translate('this is a test', src='en', dest='ko')
   print(translation.text)
 
 

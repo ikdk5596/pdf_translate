@@ -20,6 +20,7 @@ from ..common.Element import Element
 from ..common.share import TextDirection
 from .Spans import Spans
 from ..image.ImageSpan import ImageSpan
+# from google_trans_new import google_translator
 
 
 class Line(Element):

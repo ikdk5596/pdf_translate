@@ -13,7 +13,7 @@ import docx
 import time
 import argparse
 import layout_scanner
-from googletrans import Translator
+from googletran_new import google_translator
 from pdfminer.pdfpage import PDFPage
 
 
@@ -31,9 +31,9 @@ def main(args):
   # parse(input_path, output_path, start = 0, end = number_of_pages)
   
   # add google translator
-  translator = Translator()
+  translator = google_translator()
   # translation = translator.translate('this is a test', src='en', dest='ko')
-  translation = translator.translate('Hello', dest = 'ko')
+  translation = translator.translate('Hello', lang_tgt='ko')
   print(translation)
 
 

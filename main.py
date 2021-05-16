@@ -4,7 +4,7 @@
 # Reference : https://realpython.com/pdf-python/
 # 이후 Regular expression을 사용하여 replace 대체
 
-import PyPDF2 as p
+import PyPDF2
 import argparse
 import layout_scanner
 from pdfminer.pdfpage import PDFPage
@@ -15,10 +15,9 @@ def main(args):
   input_path = args.input
   output_path = args.output
   
-  PDFPage.get_pages()
-  
-  origin, result = translate(input_path)
-  print(origin, ' -> ', result)
+  pdf_reader = PyPDF2.PdfFileReader(str(input_path))
+  page = pdf_reader.getPage(0)
+  print(page.mediaBox)
 
 
 if __name__ == '__main__':

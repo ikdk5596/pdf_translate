@@ -62,7 +62,8 @@ class Line(Element):
         translator=Translator()
         if spans_text != ['<image>']:
             # print(type(spans_text[0]))
-            text = [translator.translate(spans_text[0], src='en', dest='ko')]
+            translation = translator.translate(spans_text[0], src='en', dest='ko')
+            text = [translation.text]
         else:
             text = spans_text
         print('--------------------------')
